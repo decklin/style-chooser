@@ -23,6 +23,7 @@ function appendItem(title) {
                 selectStyle: true,
                 style: li.data
             });
+            window.close();
         });
     };
     alternates.appendChild(li);
