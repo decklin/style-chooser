@@ -1,0 +1,24 @@
+{
+  "name": "Style Chooser",
+  "version": "0.1",
+  "description": "Select alternate stylesheets with a page action menu",
+  "icons": {
+  },
+  "background_page": "background.html",
+  "options_page": "options.html",
+  "page_action": {
+    "default_icon": "icons/page-action.png",
+    "default_title": "Stylesheets",
+    "popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": [ "content.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs"
+  ]
+}
