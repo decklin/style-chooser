@@ -6,13 +6,14 @@ body {
     font: 13px sans-serif;
     color: #000;
 }
-ul {
+#alternates {
     white-space: nowrap;
+    list-style: none;
 }
-li {
+#alternates li {
     padding: 3px;
 }
-li:hover {
+#alternates li:hover {
     background: -webkit-gradient(
         linear, left top, left bottom, from(#6a96c4), to(#456180)
     );
