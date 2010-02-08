@@ -3,6 +3,8 @@
   "version": "0.1",
   "description": "Select alternate stylesheets with a page action menu",
   "icons": {
+    "32": "icons/style-chooser-32.png",
+    "48": "icons/style-chooser-48.png"
   },
   "background_page": "background.html",
   "options_page": "options.html",
