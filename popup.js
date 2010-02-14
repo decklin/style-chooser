@@ -15,7 +15,7 @@ function appendItem(title) {
         chrome.tabs.getSelected(null, function(tab) {
             chrome.tabs.sendRequest(tab.id, {
                 selectStyle: true,
-                style: li.data
+                styleTitle: li.data
             });
             window.close();
         });
