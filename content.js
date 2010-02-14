@@ -3,21 +3,16 @@ function snap(path, f) {
     for (var i = 0; i < s.snapshotLength; i++) f(s.snapshotItem(i));
 }
 
-var hasStylesheets = false;
 var hasAlternates = false;
 var titles = {};
 
 snap('//link[contains(@rel, "style") and @title]', function(link) {
     titles[link.title] = true;
-    hasStylesheets = true;
     if (link.rel.indexOf('alternate') !== -1)
         hasAlternates = true;
 });
 
-chrome.extension.sendRequest({
-    styles: hasStylesheets,
-    alternates: hasAlternates
-});
+chrome.extension.sendRequest({alternates: hasAlternates});
 
 function selectStyle(title) {
     snap('//link[contains(@rel, "style") and @title]', function(link) {
