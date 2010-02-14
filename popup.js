@@ -17,6 +17,7 @@ function appendItem(title) {
                 selectStyle: true,
                 styleTitle: li.data
             });
+            localStorage[tab.url] = li.data;
             window.close();
         });
     };

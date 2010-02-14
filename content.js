@@ -13,7 +13,15 @@ snap(stylePath, function(link) {
         hasAlternates = true;
 });
 
-chrome.extension.sendRequest({alternates: hasAlternates});
+var req = {
+    alternates: hasAlternates,
+    url: location.href
+};
+
+chrome.extension.sendRequest(req, function(title) {
+    if (title)
+        selectStyle(title);
+});
 
 chrome.extension.onRequest.addListener(function(req, src, send) {
     if (req.getTitles) {
