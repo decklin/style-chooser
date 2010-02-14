@@ -7,7 +7,7 @@ var hasStylesheets = false;
 var hasAlternates = false;
 var titles = {};
 
-snap('//link[contains(@rel, "style")]', function(link) {
+snap('//link[contains(@rel, "style") and @title]', function(link) {
     titles[link.title] = true;
     hasStylesheets = true;
     if (link.rel.indexOf('alternate') !== -1)
@@ -20,7 +20,7 @@ chrome.extension.sendRequest({
 });
 
 function selectStyle(title) {
-    snap('//link[contains(@rel, "style")]', function(link) {
+    snap('//link[contains(@rel, "style") and @title]', function(link) {
         link.disabled = true;
         if (link.title === title)
             link.disabled = false;
