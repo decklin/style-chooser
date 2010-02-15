@@ -7,7 +7,6 @@
     "48": "icons/style-chooser-48.png"
   },
   "background_page": "background.html",
-  "options_page": "options.html",
   "page_action": {
     "default_icon": "icons/page-action.png",
     "default_title": "Stylesheets",
